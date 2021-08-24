@@ -1,9 +1,15 @@
+import processing.serial.*;
+import cc.arduino.*;
+Arduino arduino;
+
 public void setup(){
   size(750, 750);
+  arduino = new Arduino(this, Arduino.list()[0], 57600);
   
 }
 
 public void draw(){
+  int lightsensor = arduino.analogRead(5);
   Cat cat = new Cat(400, 200);
   cat.drawCat();
 }
@@ -39,13 +45,13 @@ class Cat{
   
   void drawWhiskers(){
     
-    float whisker_length = head_size*0.9;
+    float whisker_length = head_size*0.8;
     int whisker_height = 10;
     
     //how far the whiskers are from the center of the head
     int whisker_offset = 20;
     
-    float angle1 = (float)Math.PI/6;
+    float angle1 = (float)Math.PI/8;
     
     stroke(1);
     line(head_x+whisker_offset, head_y-whisker_height, head_x+cos(angle1)*whisker_length, head_y-sin(angle1)*whisker_length);
