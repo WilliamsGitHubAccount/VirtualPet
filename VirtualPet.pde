@@ -1,17 +1,19 @@
-import processing.serial.*;
-import cc.arduino.*;
-Arduino arduino;
+//import processing.serial.*;
+//import cc.arduino.*;
+//Arduino arduino;
 
 public void setup(){
   size(750, 750);
-  arduino = new Arduino(this, Arduino.list()[0], 57600);
+  //arduino = new Arduino(this, Arduino.list()[0], 57600);
   
 }
 
 public void draw(){
-  int lightsensor = arduino.analogRead(5);
+  //int y = arduino.analogRead(5);
   Cat cat = new Cat(400, 200);
   cat.drawCat();
+  //cat.x = y;
+  //System.out.println(y);
 }
 
 class Cat{
