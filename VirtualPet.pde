@@ -10,12 +10,10 @@ public void setup(){
 }
 
 public void draw(){
-  //int y = arduino.analogRead(5);
-  //arduino.analogWrite(5, 1000);
+
   Cat cat = new Cat(400, 200);
   cat.drawCat();
-  //cat.x = y;
-  //System.out.println(y);
+
 
 }
 
